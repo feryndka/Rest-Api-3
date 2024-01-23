@@ -16,4 +16,12 @@ model Branch {
   location  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  manager   Manager?
+}
+
+model Manager {
+  id       Int    @id @default(autoincrement())
+  name     String
+  branchId Int    @unique
+  branch   Branch @relation(fields: [branchId], references: [id])
 }
