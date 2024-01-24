@@ -25,3 +25,19 @@ model Manager {
   branchId Int    @unique
   branch   Branch @relation(fields: [branchId], references: [id])
 }
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String
+  password String
+  post     Post[]
+}
+
+model Post {
+  id     Int    @unique @default(autoincrement())
+  title  String
+  body   String
+  userId Int
+  user   User   @relation(fields: [userId], references: [id])
+}

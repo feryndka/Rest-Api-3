@@ -45,6 +45,14 @@ export const getBranch = async (req: Request, res: Response) => {
         },
         id: filterData.id,
       },
+      include: {
+        manager: {
+          select: {
+            name: true,
+            branchId: true
+          }
+        }
+      }
     });
 
     // const branch = await prisma.branch.findMany({
