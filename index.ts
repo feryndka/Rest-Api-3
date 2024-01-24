@@ -9,12 +9,15 @@ import {
 } from "./controllers/branchController";
 import userRoute from "./routes/userRoute"
 import postRoute from "./routes/postRoute"
+import managerRoute from "./routes/managerRoute"
 
 const app: Application = express();
 app.use(express.json()); // Body Parser
 
 app.use("/api/users", userRoute)
 app.use("/api/posts", postRoute)
+
+app.use("/api/manager", managerRoute)
 
 app.post("/api/branch", createBranch);
 app.get("/api/branch", getBranch);

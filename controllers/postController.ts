@@ -13,7 +13,7 @@ export const getAllPosts = async(req:Request, res:Response) => {
 
     return res.status(200).send({
       success: true,
-      message: 'get all users success',
+      message: 'get all post success',
       data: posts
     })
   } catch(err) {

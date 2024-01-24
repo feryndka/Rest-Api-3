@@ -10,6 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Relasi one to one table Branch(one) dan Manager(one)
 model Branch {
   id        Int      @id @default(autoincrement())
   name      String
@@ -26,6 +27,7 @@ model Manager {
   branch   Branch @relation(fields: [branchId], references: [id])
 }
 
+// Relasi one to many table user(one) dan post(many)
 model User {
   id       Int    @id @default(autoincrement())
   name     String

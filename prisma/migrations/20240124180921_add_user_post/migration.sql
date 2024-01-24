@@ -15,8 +15,7 @@ CREATE TABLE `Post` (
     `body` VARCHAR(191) NOT NULL,
     `userId` INTEGER NOT NULL,
 
-    UNIQUE INDEX `Post_id_key`(`id`),
-    UNIQUE INDEX `Post_userId_key`(`userId`)
+    UNIQUE INDEX `Post_id_key`(`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
